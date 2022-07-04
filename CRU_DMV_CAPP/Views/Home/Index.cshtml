@@ -1,0 +1,40 @@
+﻿@model List<CRU_DMV_CAPP.Models.empmodelcs>
+@{
+    ViewBag.Title = "Home,,page";
+}
+
+<h2>Create</h2>
+<h3>Emp Details</h3>
+ 
+<table class=" table table-bordered table-hover table-responsive">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Salary</th>
+        <th>Company</th>
+        <th>Gender</th>
+        <th>Address</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>Details</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.Id</td>
+    <td>@item.Name</td>
+    <td>@item.Email</td>
+    <td>@item.Salary</td>
+    <td>@item.Company</td>
+    <td>@item.Gender</td>
+    <td>@item.City</td>
+    <td><a class=" btn btn-success" href="@Url.Action("Edit","Home",new {id=item.Id })">EDIT</a></td>
+    <td><a class=" btn btn-danger" href="@Url.Action("Delete","Home",new {id=item.Id })">DELETE</a></td>
+    <td><a class=" btn btn-warning" href="@Url.Action("Edit","Home",new {id=item.Id })">DETIALS</a></td>
+
+</tr>
+
+    }
+</table>
